@@ -1,0 +1,24 @@
+/* Dark Mode Override (Slate-950 Aesthetic) */
+:root {
+  --ifm-color-primary: #10b981; /* Emerald-500 */
+  --ifm-color-primary-dark: #059669;
+  --ifm-color-primary-lighter: #34d399;
+
+  /* Light Mode (If user toggles) - Keep it clean */
+  --ifm-background-color: #f8fafc;
+}
+
+/* Force Dark Mode Default Colors */
+[data-theme="dark"] {
+  --ifm-background-color: #020617; /* Slate-950 */
+  --ifm-background-surface-color: #0f172a; /* Slate-900 */
+  --ifm-text-color: #cbd5e1; /* Slate-300 */
+  --ifm-heading-color: #f1f5f9; /* Slate-100 */
+  --ifm-link-color: #10b981;
+}
+
+/* Hide the "Docusaurus" footer branding if you want a clean look */
+.footer__copyright {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
