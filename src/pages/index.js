@@ -1,42 +1,95 @@
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title={`Home`}
+      description="Spiritual First Aid">
+
+      {/* Hero Section */}
+      <main className="hero-container" style={{
+        backgroundColor: '#020617', // Slate-950
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '2rem'
+      }}>
+
+        {/* Animated Icon or Logo */}
+        <div style={{ marginBottom: '2rem', color: '#10b981' }}>
+          {/* If you don't have Lucide installed in Docusaurus yet, just use an SVG or image here */}
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+
+        <h1 style={{
+          fontSize: '3.5rem',
+          fontWeight: '900',
+          color: 'white',
+          letterSpacing: '-0.05em',
+          lineHeight: '1.1',
+          marginBottom: '1rem'
+        }}>
+          BATTLE<br />PROTOCOLS
+        </h1>
+
+        <p style={{
+          fontSize: '1.25rem',
+          color: '#94a3b8', // Slate-400
+          maxWidth: '600px',
+          marginBottom: '3rem',
+          lineHeight: '1.6'
+        }}>
+          A field manual for spiritual resilience. <br />
+          Anchor your mind. Defend your heart.
+        </p>
+
+        {/* The Fork in the Road */}
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+
+          {/* Button 1: The App */}
+          <Link
+            to="https://app.battleprotocols.com"
+            style={{
+              backgroundColor: '#10b981', // Emerald
+              color: '#020617',
+              padding: '1rem 2rem',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              border: '1px solid #10b981'
+            }}>
+            <span>LAUNCH APP</span>
+            <span>→</span>
+          </Link>
+
+          {/* Button 2: The Manual */}
+          <Link
+            to="/docs/introduction"
+            style={{
+              backgroundColor: 'transparent',
+              color: 'white',
+              padding: '1rem 2rem',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              textDecoration: 'none',
+              border: '1px solid #334155' // Slate-700
+            }}>
+            READ THE MANUAL
+          </Link>
+        </div>
+
       </main>
     </Layout>
   );
